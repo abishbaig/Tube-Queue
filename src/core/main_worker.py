@@ -71,7 +71,7 @@ class Downloader:
 
 def main():
     ytDown = Downloader()
-    ytDown.downloadVideo("https://www.youtube.com/watch?v=XmLOwJHFHf0", os.curdir, 720)
+    ytDown.downloadPlaylist("https://www.youtube.com/playlist?list=PLKZJAqRtlIlG58B1cLWYeziIkbPJmDilX", os.curdir, 720)
 
 
 if __name__ == "__main__":

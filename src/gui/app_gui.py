@@ -188,6 +188,7 @@ class TubeQueue(ctk.CTk):
     ):
         if not url:
             messagebox.showerror("Invalid URL", "Please Provide a Correct URL")
+            btn.configure(state="normal")
             return
         status_lable.configure(text="Status: Downloading...")
         try:
@@ -203,6 +204,7 @@ class TubeQueue(ctk.CTk):
     ):
         if not url:
             messagebox.showerror("Invalid URL", "Please Provide a Correct URL")
+            btn.configure(state="normal")
             return
         status_lable.configure(text="Status: Downloading...")
         try:
@@ -253,10 +255,12 @@ class TubeQueue(ctk.CTk):
 
         if callingFrame.lower() == "video":
             self._startVideoDownload(url.strip(), int(resolution), status_lable, btn)
-        elif callingFrame.lower == "playlist":
+        elif callingFrame.lower() == "playlist":
+            print("Playlist Selected")
             self._startPlaylistDownload(url.strip(), int(resolution), status_lable, btn)
         else:
             print("No Tab Selected")
+            btn.configure(state="normal")
 
     # Widgets for Video and Playlist Tabs
     def _createVidPlay_widgets(self, link_Of: str, frame: ctk.CTkFrame):
